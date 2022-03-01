@@ -13,7 +13,7 @@
                 "width": 120,
                 "extensible": true,
                 "config": {
-                    "script": "// This operator is needed to keep compatibility to the old datagenerator\nvar counter = 0;\n\ngetRandom = function(min, max) {\n    return Math.random() * (max - min) + min;\n};\n\ngetRandomInt = function(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n};\n\ngenerateData = function() {\n\n    var payload = \"Versao1,\"; // DeviceID\n    payload += getRandom(400, 500) + \"\\r\\n\"; // Sound  \n\n    return payload;\n};\n\n$.addTimer(\"500ms\",doTick);\n\nfunction doTick(ctx) {\n    $.output(counter+\",\"+generateData());\n    counter++;\n}\n"
+                    "script": "// This is new\n\n// This operator is needed to keep compatibility to the old datagenerator\nvar counter = 0;\n\ngetRandom = function(min, max) {\n    return Math.random() * (max - min) + min;\n};\n\ngetRandomInt = function(min, max) {\n    return Math.floor(Math.random() * (max - min + 1)) + min;\n};\n\ngenerateData = function() {\n\n    var payload = \"Versao2,\"; // DeviceID\n    payload += getRandom(400, 500) + \"\\r\\n\"; // Sound  \n\n    return payload;\n};\n\n$.addTimer(\"500ms\",doTick);\n\nfunction doTick(ctx) {\n    $.output(counter+\",\"+generateData());\n    counter++;\n}\n"
                 }
             }
         },
